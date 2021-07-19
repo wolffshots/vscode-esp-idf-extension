@@ -66,6 +66,7 @@
     "onCommand:espIdf.getExtensionPath",
     "onCommand:espIdf.getOpenOcdConfigs",
     "onCommand:espIdf.genCoverage",
+    "onCommand:espIdf.partition.table.refresh",
     "onCommand:espIdf.removeCoverage",
     "onCommand:espIdf.searchInEspIdfDocs",
     "onCommand:espIdf.setup.start",
@@ -86,6 +87,7 @@
     "onCommand:esp.component-manager.ui.show",
     "onView:idfAppTracer",
     "onView:idfAppTraceArchive",
+    "onView:idfPartitionExplorer",
     "onView:espRainmaker",
     "onView:idfComponents",
     "workspaceContains:**/project_description.json",
@@ -141,6 +143,10 @@
           "name": "ESP-IDF Docs search results"
         },
         {
+          "id": "idfPartitionExplorer",
+          "name": "IDF Partition Explorer"
+        },
+        {
           "id": "idfAppTracer",
           "name": "IDF App Tracer"
         },
@@ -172,6 +178,10 @@
     ],
     "menus": {
       "view/title": [
+        {
+          "command": "espIdf.partition.table.refresh",
+          "when": "view == idfPartitionExplorer"
+        },
         {
           "command": "espIdf.apptrace.customize",
           "when": "view == idfAppTracer"
@@ -231,6 +241,11 @@
           "when": "resourceFilename == sdkconfig",
           "command": "espIdf.menuconfig.start",
           "group": "navigation"
+        },
+        {
+          "when": "resourceExtname == .bin",
+          "group": "navigation",
+          "command": "espIdf.flashBinaryToPartition"
         },
         {
           "when": "resourceExtname == .csv",
@@ -742,6 +757,16 @@
       {
         "command": "espIdf.openOCDCommand",
         "title": "%espIdf.openOCDCommand.title%"
+      },
+      {
+        "command": "espIdf.partition.table.refresh",
+        "title": "Refresh partition table",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "espIdf.flashBinaryToPartition",
+        "category": "ESP-IDF",
+        "title": "Flash binary to partition..."
       },
       {
         "command": "espIdf.apptrace.archive.refresh",
