@@ -1795,10 +1795,7 @@ export async function activate(context: vscode.ExtensionContext) {
             canSelectMany: false,
             filters: { Binaries: ["bin"] },
           });
-          if (
-            selectedFile &&
-            selectedFile.length > 0
-          ) {
+          if (selectedFile && selectedFile.length > 0) {
             await flashBinaryToPartition(
               partitionNode.offset,
               selectedFile[0].fsPath
