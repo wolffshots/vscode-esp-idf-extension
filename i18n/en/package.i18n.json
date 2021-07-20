@@ -43,6 +43,8 @@
   "espIdf.setGcovConfig.title": "ESP-IDF: Configure project sdkconfig for coverage",
   "espIdf.importProject.title": "Import ESP-IDF Project",
   "espIdf.copyOpenOcdRules.title": "Add OpenOCD rules file",
+  "espIdf.partition.table.refresh.title": "Refresh partition table",
+  "espIdf.flashBinaryToPartition.title": "Flash binary to partition...",
   "esp.component-manager.ui.show.title": "Show Component Registry",
   "esp.component-manager.cli.addDependencyError": "Error encountered while adding dependency to the component",
   "debug.initConfig.name": "ESP-IDF: Launch",

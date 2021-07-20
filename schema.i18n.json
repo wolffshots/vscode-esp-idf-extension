@@ -120,6 +120,8 @@
     "espIdf.importProject.title",
     "espIdf.eraseFlash.title",
     "espIdf.copyOpenOcdRules.title",
+    "espIdf.partition.table.refresh.title",
+    "espIdf.flashBinaryToPartition.title",
     "debug.initConfig.name",
     "debug.initConfig.description",
     "param.adapterTargetName",
