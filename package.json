@@ -766,6 +766,7 @@
       {
         "command": "espIdf.partition.table.refresh",
         "title": "%espIdf.partition.table.refresh.title%",
+        "category": "ESP-IDF",
         "icon": "$(refresh)"
       },
       {
