@@ -1049,7 +1049,7 @@
     "vscode:prepublish": "webpack --mode production",
     "lint": "prettier --check **/*.*",
     "debugPreTask": "webpack --mode development",
-    "compile": "tsc -p ./",
+    "compile": "rimraf out && tsc -p ./",
     "watch": "webpack --watch --mode development",
     "test": "tsc -p ./ && node ./out/test/runTest.js --VERBOSE 2>&1",
     "package": "gulp build && vsce package --yarn -o esp-idf-extension.vsix",
