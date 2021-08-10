@@ -55,6 +55,15 @@ jobs:
       - name: Get the test output
         run: echo "${{ steps.idftest.outputs.result }}" | tee test-result.xml
 
+      - name: Run UI test
+        env:
+          CODE-VERSION: latest
+        run: |
+          sudo apt-get install xvfb
+          export DISPLAY=:99.0
+          Xvfb -ac :99 -screen 0 1920x1080x16 &
+          yarn ui-test
+
       - name: Package .vsix
         run: yarn package
 
