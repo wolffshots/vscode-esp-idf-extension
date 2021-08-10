@@ -22,4 +22,3 @@ Xvfb :99 & sleep 2
 yarn compile
 node ./out/test/runTest.js --VERBOSE
 echo ::set-output name=result::$(cat ./out/results/test-results.xml)
-yarn ui-test
