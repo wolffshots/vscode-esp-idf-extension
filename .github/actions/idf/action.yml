@@ -9,6 +9,8 @@ inputs:
 outputs:
   result:
     description: "Docker test output"
+  uiresult:
+    description: "UI test output"
 
 runs:
   using: "docker"
