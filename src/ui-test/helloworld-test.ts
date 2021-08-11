@@ -12,7 +12,7 @@ describe("Hello world testing", async () => {
 
     const notification = (await VSBrowser.instance.driver.wait(() => {
       return notificationExists("Hello");
-    }, 2000)) as Notification;
+    }, 5000)) as Notification;
 
     const msg = await notification.getMessage();
     const notificationType = await notification.getType();
