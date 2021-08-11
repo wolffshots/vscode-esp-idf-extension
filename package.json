@@ -90,7 +90,8 @@
     "onView:idfComponents",
     "workspaceContains:**/project_description.json",
     "workspaceContains:**/sdkconfig",
-    "workspaceContains:**/CMakeLists.txt"
+    "workspaceContains:**/CMakeLists.txt",
+    "onCommand:espIdf.helloWorld"
   ],
   "main": "./dist/extension",
   "contributes": {
@@ -908,6 +909,10 @@
         "command": "espIdf.copyOpenOcdRules",
         "title": "%espIdf.copyOpenOcdRules.title%",
         "category": "ESP-IDF"
+      },
+      {
+        "command": "espIdf.helloWorld",
+        "title": "Hello World"
       }
     ],
     "breakpoints": [
@@ -1058,7 +1063,7 @@
     "validateLocalization": "gulp validateLocalization",
     "webpack": "webpack --mode production",
     "packageWithoutDependencies": "gulp noDepBuild && vsce package --yarn -o esp-idf-extension-open.vsix",
-		"ui-test": "tsc -p ./ && extest setup-and-run -u -y out/ui-test/*.js -l All"
+		"ui-test": "tsc -p ./ && extest setup-and-run out/ui-test/*.js"
   },
   "devDependencies": {
     "@creativebulma/bulma-tooltip": "^1.2.0",
