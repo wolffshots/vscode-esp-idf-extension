@@ -19,4 +19,6 @@ export PY_PKGS=$(python -m pip list --format json)
 yarn
 yarn lint
 Xvfb -ac :99 -screen 0 1920x1080x16 & sleep 2 & yarn ui-test
-echo ::set-output name=uiresult::$(cat ./out/results/ui-test-results.xml)
+ls out/ui-test
+cat test-resources/test.log
+echo ::set-output name=uiresult::$(cat test-resources/test.log)
