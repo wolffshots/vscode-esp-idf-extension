@@ -65,6 +65,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Clone Repository
+        uses: actions/checkout@v2
+        with:
+          submodules: "recursive"
+
       - name: Run ui test
         uses: ./.github/actions/idf
         id: idfuitest
