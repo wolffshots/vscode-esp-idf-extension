@@ -91,7 +91,8 @@
     "workspaceContains:**/project_description.json",
     "workspaceContains:**/sdkconfig",
     "workspaceContains:**/CMakeLists.txt",
-    "onCommand:espIdf.helloWorld"
+    "onCommand:espIdf.helloWorld",
+    "onCommand:espIdf.test.openFolder"
   ],
   "main": "./dist/extension",
   "contributes": {
@@ -913,6 +914,10 @@
       {
         "command": "espIdf.helloWorld",
         "title": "Hello World"
+      },
+      {
+        "command": "espIdf.test.openFolder",
+        "title": "Open test folder"
       }
     ],
     "breakpoints": [
@@ -1063,7 +1068,7 @@
     "validateLocalization": "gulp validateLocalization",
     "webpack": "webpack --mode production",
     "packageWithoutDependencies": "gulp noDepBuild && vsce package --yarn -o esp-idf-extension-open.vsix",
-		"ui-test": "tsc -p ./ && extest setup-and-run out/ui-test/*.js"
+		"ui-test": "tsc -p ./ && extest setup-and-run -l DEBUG out/ui-test/*.js"
   },
   "devDependencies": {
     "@creativebulma/bulma-tooltip": "^1.2.0",
