@@ -1,5 +1,7 @@
 FROM espressif/idf
 
+ARG DEBIAN_FRONTEND=nointeractive
+
 RUN apt-get update && apt-get install -y \
  curl \
  libasound2 \
@@ -33,6 +35,7 @@ RUN chmod +x /entrypoint.sh
 
 ADD ui-entrypoint.sh /ui-entrypoint.sh
 RUN chmod +x /ui-entrypoint.sh
+
 
 ENTRYPOINT ["/bin/bash"]
 CMD ["/entrypoint.sh"]
