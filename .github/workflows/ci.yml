@@ -84,4 +84,4 @@ jobs:
           path: ./test-resources/test.log
       
       - name: Get the test output
-        run: echo "${{ steps.idftest.outputs.uiresult }}" | tee ui-test-result.xml
+        run: echo "${{ steps.idfuitest.outputs.uiresult }}" | tee ui-test-result.log
