@@ -1063,7 +1063,7 @@
     "validateLocalization": "gulp validateLocalization",
     "webpack": "webpack --mode production",
     "packageWithoutDependencies": "gulp noDepBuild && vsce package --yarn -o esp-idf-extension-open.vsix",
-    "ui-test": "tsc -p ./ && extest setup-and-run -y -i -u -l DEBUG out/ui-test/*-test.js"
+    "ui-test": "tsc -p ./ && extest setup-and-run -y -i -u -l DEBUG 'out/ui-test/*-test.js'"
   },
   "devDependencies": {
     "@creativebulma/bulma-tooltip": "^1.2.0",
