@@ -20,5 +20,4 @@ rm -rf out
 yarn
 yarn lint
 Xvfb -ac :99 -screen 0 1920x1080x16 & sleep 2 & yarn ui-test
-ls out/ui-test
 echo ::set-output name=uiresult::$(cat test-resources/test.log)
