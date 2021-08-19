@@ -27,7 +27,6 @@ describe("SDKConfig Editor", () => {
   });
 
   it("findWebElement works", async () => {
-    await new Promise((res) => setTimeout(res, 100000));
     view = new WebView();
     await view.switchToFrame();
     const element = await view.findWebElement(By.id("searchbar-save"));
