@@ -8,6 +8,8 @@ describe("SDKConfig Editor", () => {
     this.timeout(100000);
     await new Workbench().executeCommand("espIdf.menuconfig.start");
     await new Promise((res) => setTimeout(res, 50000));
+    view = new WebView();
+    await view.switchToFrame();
   });
 
   after(async () => {
@@ -18,9 +20,12 @@ describe("SDKConfig Editor", () => {
   });
 
   it("findWebElement works", async () => {
-    view = new WebView();
-    await view.switchToFrame();
     const element = await view.findWebElement(By.id("searchbar-save"));
     expect(await element.getText()).has.string("Save");
-  }).timeout(999999);
+  });
+
+  it("find compiler toolprefix", async () => {
+    const element = await view.findWebElement(By.xpath(`.//label[@data-config-id='SDK_TOOLPREFIX']`));
+    expect(await element.getText()).has.string("Compiler toolchain path/prefix");
+  });
 });

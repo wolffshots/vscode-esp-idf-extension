@@ -25,3 +25,4 @@ then
     echo "All tests passed"
 else
     echo "$(cat test-resources/test.log)"
+fi
