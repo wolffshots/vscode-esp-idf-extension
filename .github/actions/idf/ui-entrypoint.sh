@@ -20,7 +20,8 @@ rm -rf out
 yarn
 yarn lint
 Xvfb -ac :99 -screen 0 1920x1080x16 & sleep 2 & yarn ui-test
-output="$(cat test-resources/test.log)"
-output="${output//$'\n'/\\n}"
-output="${output// /}"
-echo "::set-output name=uiresult::$output"
+if test $? -eq 0
+then
+    echo "All tests passed"
+else
+    echo "$(cat test-resources/test.log)"

@@ -83,13 +83,3 @@ jobs:
         id: idfuitest
         with:
           run: /ui-entrypoint.sh
-
-      - name: Get the test output
-        run: echo ${{ steps.idfuitest.outputs.uiresult }} > ui-test-result.log
-      
-      - name: Upload log
-        uses: actions/upload-artifact@v1
-        if: failure()
-        with:
-          name: ui-test-result.log
-          path: ui-test-result.log
