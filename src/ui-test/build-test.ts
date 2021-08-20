@@ -7,6 +7,7 @@ import {
 } from "vscode-extension-tester";
 import { expect } from "chai";
 import { resolve } from "path";
+import { pathExists } from "fs-extra";
 
 describe("Build testing", async () => {
 
@@ -18,15 +19,18 @@ describe("Build testing", async () => {
   it("Build command notification show correct text", async () => {
     await new Workbench().executeCommand("ESP-IDF: Build your project");
     await new Promise((res) => setTimeout(res, 360000));
-    const notification = (await VSBrowser.instance.driver.wait(() => {
-      return notificationExists("Build");
-    }, 2000)) as Notification;
+    // const notification = (await VSBrowser.instance.driver.wait(() => {
+    //   return notificationExists("Build");
+    // }, 2000)) as Notification;
 
-    const msg = await notification.getMessage();
-    const notificationType = await notification.getType();
+    // const msg = await notification.getMessage();
+    // const notificationType = await notification.getType();
 
-    expect(msg).equals("Build Successfully");
-    expect(notificationType).equals(NotificationType.Info);
+    // expect(msg).equals("Build Successfully");
+    // expect(notificationType).equals(NotificationType.Info);
+    const testBinPath = resolve(__dirname, "..", "..", "testFiles", "testWorkspace", "build", "hello-world.bin");
+    const binExists = await pathExists(testBinPath);
+    expect(binExists).equals(true);
   }).timeout(999999);
 });
 
